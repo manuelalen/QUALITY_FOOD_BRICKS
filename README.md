@@ -37,3 +37,18 @@ La lógica de negocio reside en la columna `LOGIC_PAYLOAD` mediante una estructu
         "set": {"STATUS_IND": "'RELEASED'"}
     }
 ]
+```
+
+## 🚀 Implementación Técnica
+1. Gestión de Estados con Unity Catalog
+El proyecto utiliza Unity Catalog Volumes para el almacenamiento de checkpoints, cumpliendo con las políticas de seguridad que deshabilitan el DBFS raíz público:
+path: (`/Volumes/workspace/global_quality_db/mis_checkpoints/`)**
+
+2. Optimización de Cómputo
+Se utiliza el trigger (`availableNow=True`)**. Esto permite:
+
+* Procesamiento incremental de todos los datos disponibles.
+
+* Reducción de costes al no requerir clústeres encendidos 24/7.
+
+* Compatibilidad total con clústeres tipo Shared y Serverless.
