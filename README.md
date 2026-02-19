@@ -54,5 +54,11 @@ Se utiliza el trigger (`availableNow=True`)**. Esto permite:
 * Compatibilidad total con clústeres tipo Shared y Serverless.
 
 ## ⚒ Ejemplo de blockedo con `FAIL_IND = 1`
+Esto es lo que nos sale cuando lanzamos, por ejemplo:
+
+`
+INSERT INTO GLOBAL_QUALITY_DB.FACT_QUALITY_SAMPLES (SAM_ID, BAT_COD, CONT_COD, MDF_VAL, FAIL_IND)
+VALUES ('S_001', 'BAT_ES_002', 'C_PHOS', 0.75, 1);
+`
 
 ![Resultado del ejemplo](images/result.png)
