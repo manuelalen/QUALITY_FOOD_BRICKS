@@ -55,4 +55,4 @@ Se utiliza el trigger (`availableNow=True`)**. Esto permite:
 
 ## ⚒ Ejemplo de blockedo con `FAIL_IND = 1`
 
-[Resultado del ejemplo(images/result.png)]
+![Resultado del ejemplo(images/result.png)]
