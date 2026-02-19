@@ -14,8 +14,8 @@ Este proyecto implementa una solución de **Captura de Datos Modificados (CDC)**
 El sistema sigue un patrón **Metadata-Driven** (orientado a metadatos), lo que desacopla la lógica de negocio del motor de ejecución.
 
 ### 🧩 Componentes del Ecosistema
-* **Bronze / Raw (`FACT_QUALITY_SAMPLES`)**: Origen de datos en formato Delta que recibe los análisis de laboratorio.
-* **Silver / Gold (`FACT_PALLET_STOCK`)**: Tabla de inventario que refleja el estado real (Released/Blocked) de cada unidad de carga.
+* 🥉 **Bronze / Raw (`FACT_QUALITY_SAMPLES`)**: Origen de datos en formato Delta que recibe los análisis de laboratorio.
+* 🥇 **Gold (`FACT_PALLET_STOCK`)**: Tabla de inventario que refleja el estado real (Released/Blocked) de cada unidad de carga.
 * **Control Table (`f_metadata_logics`)**: Tabla maestra que contiene las lógicas de `MERGE` en formato JSON, permitiendo actualizaciones de reglas sin desplegar nuevo código.
 * **Streaming Engine**: Script PySpark que utiliza **DeltaTable API** para ejecutar operaciones atómicas e incrementales.
 
@@ -52,3 +52,7 @@ Se utiliza el trigger (`availableNow=True`)**. Esto permite:
 * Reducción de costes al no requerir clústeres encendidos 24/7.
 
 * Compatibilidad total con clústeres tipo Shared y Serverless.
+
+## ⚒ Ejemplo de blockedo con `FAIL_IND = 1`
+
+!(images/result.png)
